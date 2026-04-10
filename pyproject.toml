@@ -1,0 +1,35 @@
+[project]
+name = "ferri"
+version = "0.1.0"
+description = "BC Ferries scraping pipeline for RAG system"
+readme = "README.md"
+authors = [
+    { name = "lawrenceokolo1", email = "lawrenceobabc@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "httpx",
+    "selectolax",
+    "pydantic>=2.0",
+    "pydantic-settings",
+    "sqlalchemy[asyncio]>=2.0",
+    "alembic",
+    "asyncpg",
+    "apscheduler>=3.10,<4",
+    "typer",
+    "loguru",
+    "rich",
+    "playwright",
+    "playwright-stealth",
+    "pymupdf4llm",
+    "psycopg2-binary>=2.9.11",
+    "fastapi>=0.135.3",
+    "uvicorn[standard]>=0.44.0",
+]
+
+[project.scripts]
+ferri = "ferri.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.10.4,<0.11.0"]
+build-backend = "uv_build"
